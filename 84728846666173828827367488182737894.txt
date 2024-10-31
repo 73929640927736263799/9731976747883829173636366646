@@ -14420,90 +14420,24 @@ local function BNZZJ_fake_script() -- fps.LocalScript
 
 
 
-	local function waitForChildWithTimeout(parent, childName, timeout)
+	local Players = game:GetService("Players")
+	local player = Players.LocalPlayer
 
-		local startTime = tick()
+	local textLabel = script.Parent
 
-		while (tick() - startTime) < timeout do
+	local frameCount = 0
+	local elapsedTime = 0
 
-			local child = parent:FindFirstChild(childName)
+	game:GetService("RunService").RenderStepped:Connect(function(deltaTime)
+		frameCount = frameCount + 1
+		elapsedTime = elapsedTime + deltaTime
 
-			if child then
-
-				return child
-
-			end
-
-			wait(0.1)
-
+		if elapsedTime >= 1 then
+			textLabel.Text = frameCount
+			frameCount = 0
+			elapsedTime = 0
 		end
-
-		return nil
-
-	end
-
-	
-
-	local player = game.Players.LocalPlayer
-
-	local gui = script.Parent
-
-	
-
-	local hhFrame = waitForChildWithTimeout(gui, "HHFrame", 5)
-
-	if not hhFrame then return end
-
-	
-
-	local midBar = waitForChildWithTimeout(hhFrame, "MidBar", 5)
-
-	if not midBar then return end
-
-	
-
-	local mainFrame = waitForChildWithTimeout(midBar, "MainFrame", 5)
-
-	if not mainFrame then return end
-
-	
-
-	local homeTab = waitForChildWithTimeout(mainFrame, "HomeTab", 5)
-
-	if not homeTab then return end
-
-	
-
-	local frame5 = waitForChildWithTimeout(homeTab, "Frame5", 5)
-
-	if not frame5 then return end
-
-	
-
-	local fpsLabel = waitForChildWithTimeout(frame5, "fps", 5)
-
-	if not fpsLabel then return end
-
-	
-
-	local function updateFPS()
-
-		while true do
-
-			local fpsValue = 1 / game:GetService("RunService").RenderStepped:Wait()
-
-			fpsLabel.Text = tostring(math.floor(fpsValue))
-
-			wait(1)
-
-		end
-
-	end
-
-	
-
-	spawn(updateFPS)
-
+	end)
 end
 
 coroutine.wrap(BNZZJ_fake_script)()
