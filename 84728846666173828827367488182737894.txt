@@ -15404,7 +15404,7 @@ local function sendNotification(title, text)
 	StarterGui:SetCore("SendNotification", notification)
 end
 
-sendNotification("HunterHub Notes!", "I Degraded the version of this GUI to maintain its functions")
+sendNotification("Hunter Clan Notes!", "I Degraded the version of this GUI to maintain its functions")
 
 -- NA PC Version script:
 
