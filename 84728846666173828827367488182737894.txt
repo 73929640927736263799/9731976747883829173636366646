@@ -1490,7 +1490,7 @@ local connections = {}
 
 
 
-local function respawnCharacter()
+function respawnCharacter()
 
     if player.Character then
 
@@ -1506,7 +1506,7 @@ end
 
 
 
-local function connectDiedEvent()
+function connectDiedEvent()
 
     if player.Character then
 
@@ -1550,7 +1550,7 @@ end
 
 
 
-local function onCharacterAdded(character)
+function onCharacterAdded(character)
 
     connectDiedEvent()
 
@@ -1568,7 +1568,7 @@ end
 
 
 
-local function updateButton()
+function updateButton()
 
     if isScriptActive then
 
@@ -1588,7 +1588,7 @@ end
 
 
 
-local function toggleScript()
+function toggleScript()
 
     isScriptActive = not isScriptActive
 
@@ -1704,7 +1704,7 @@ TextButton_7.TextWrapped = true
 
 
 
-local function toggleFreeze(character, freeze)
+function toggleFreeze(character, freeze)
 
     for i, v in pairs(character:GetChildren()) do
 
@@ -1726,9 +1726,7 @@ local Character = player.Character or player.CharacterAdded:Wait()
 
 local VariableTable = {Freeze = false}
 
-
-
-local function toggleFreezeState()
+ function toggleFreezeState()
 
     VariableTable['Freeze'] = not VariableTable['Freeze']
 
@@ -1840,7 +1838,7 @@ local NoclipHandler = nil
 
 
 
-local function NoclipLoop()
+function NoclipLoop()
 
     local character = Players.LocalPlayer.Character
 
@@ -1862,7 +1860,7 @@ end
 
 
 
-local function toggleNoclipState()
+function toggleNoclipState()
 
     VariableTable['Noclip'] = not VariableTable['Noclip']
 
@@ -2016,7 +2014,7 @@ local toolConnection
 
 
 
-local function equipTool(toolName)
+function equipTool(toolName)
 
     local tool = Players.LocalPlayer.Backpack:FindFirstChild(toolName)
 
@@ -2030,7 +2028,7 @@ end
 
 
 
-local function unequipTool(toolName)
+function unequipTool(toolName)
 
     local tool = Players.LocalPlayer.Character:FindFirstChild(toolName)
 
@@ -2044,7 +2042,7 @@ end
 
 
 
-local function toolLoop()
+function toolLoop()
 
     if Players.LocalPlayer.Character and Players.LocalPlayer.Character:FindFirstChild("ForceField") then
 
@@ -2080,7 +2078,7 @@ end
 
 
 
-local function toggleToolState()
+function toggleToolState()
 
     VariableTable['AutoSword'] = not VariableTable['AutoSword']
 
@@ -15406,7 +15404,7 @@ local function sendNotification(title, text)
 	StarterGui:SetCore("SendNotification", notification)
 end
 
-sendNotification("HunterHub", "I Degraded the version of this GUI to maintain its functions")
+sendNotification("HunterHub Notes!", "I Degraded the version of this GUI to maintain its functions")
 
 -- NA PC Version script:
 
