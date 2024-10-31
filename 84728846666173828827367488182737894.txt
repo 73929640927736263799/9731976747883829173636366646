@@ -14446,7 +14446,7 @@ local function BNZZJ_fake_script() -- fps.LocalScript
 
 	local player = game.Players.LocalPlayer
 
-	local gui = player:WaitForChild("PlayerGui"):WaitForChild("HunterHub")
+	local gui = script.Parent
 
 	
 
