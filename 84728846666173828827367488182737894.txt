@@ -516,7 +516,7 @@
 
 
 
-HunterHub.Name = "HunterHubv4.7"
+HunterHub.Name = "HunterHubv4.1"
 
 HunterHub.Parent = game:GetService("CoreGui")
 
@@ -582,7 +582,7 @@ TextLabel.ZIndex = 2
 
 TextLabel.Font = Enum.Font.Fantasy
 
-TextLabel.Text = "     HunterHub v4.7.3     "
+TextLabel.Text = "     HunterHub v4.3.1     "
 
 TextLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
 
